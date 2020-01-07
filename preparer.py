@@ -1,6 +1,6 @@
 import json
 
-file = 'RK_Zivildienst_HorstMayer'
+file = 'iVolunteerNew'
 
 with open(file+'.json') as json_file:
     data = json.load(json_file)
@@ -8,7 +8,7 @@ with open(file+'.json') as json_file:
     for p in data.keys():
         personId = p
         for k in data[p]:
-            if k != 'Person':
+            if k != 'PersonData' and k != 'PersonTasks':
                 for i in data[p][k]:
                     i['personID']=p
 
